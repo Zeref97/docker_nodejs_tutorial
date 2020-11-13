@@ -1,0 +1,14 @@
+version: '2'
+services:
+  server_mqtt:
+    image: server_mqtt:1.0.0
+    user: root
+    ports:
+      - "8883:8883"
+      - "9000:9000"
+    tty: true
+    volumes:
+      - ./Server_mqtt:/opt/src
+    devices:
+      - "/dev/snd:/dev/snd"
+    restart: always             # run as a service
